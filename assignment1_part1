@@ -1,0 +1,42 @@
+# !/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Assignment 1-part1-Week 1. Functions and Exceptions."""
+
+
+def listDivide(numbers, divide=2):
+    """Calculates elements in a list that are divisible by a specific integer."""
+    numbers[:] = [x / divide for x in numbers if x % divide == 0]
+    evenElem = len(numbers)
+    return evenElem
+
+
+class ListDivideException(Exception):
+    pass
+
+
+def testlistDivide():
+    """Tests if listDivide calculates correclty."""
+    if listDivide([1, 2, 3, 4, 5]) == 2:
+        print 'listDivide([1,2,3,4,5]) equals 2 works'
+    else:
+        raise ListDivideException
+
+    if listDivide([2, 4, 6, 8, 10]) == 5:
+        print 'listDivide([2,4,6,8,10]) equals 5 works'
+    else:
+        raise ListDivideException
+
+    if listDivide([30, 54, 63, 98, 100], divide=10) == 2:
+        print 'listDivide([30,54,63,98,100], divide=10) equals 2 works'
+    else:
+        raise ListDivideException
+
+    if listDivide([]) == 0:
+        print 'listDivide([]) equals 0 works'
+    else:
+        raise ListDivideException
+
+    if listDivide([1, 2, 3, 4, 5]) == 5:
+        print 'listDivide([]) equals 0 works'
+    else:
+        raise ListDivideException
