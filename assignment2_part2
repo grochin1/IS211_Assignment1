@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""Assignment 1-part2-Week 1. Simple Class."""
+
+class Book(object):
+    book_1 = ''
+    book_2 = ''
+
+    def __init__(self):
+        book_1 = Book('Of Mice and Men', 'John Steinbeck')
+
+        book_2 = Book('To Kill a Mockingbird', 'Harper Lee')
+
+    def display(self):
+        book_1 = '{0} written by {1}'.format(self)
+        print book_1
+        book_2 = '{0} written by {1}'.format(self)
+        print book_2
